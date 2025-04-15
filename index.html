@@ -135,14 +135,20 @@ npx angular-cli-ghpages --dir=dist/mi-app</code></pre>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.2/dist/reveal.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-  <script>
-    Reveal.initialize({
-      hash: true,
-      slideNumber: true
-    });
-    hljs.highlightAll();
-  </script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.2/dist/reveal.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js" defer></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof Reveal !== 'undefined') {
+      Reveal.initialize({
+        hash: true,
+        slideNumber: true
+      });
+      hljs.highlightAll();
+    } else {
+      console.error("Reveal.js no se cargó correctamente.");
+    }
+  });
+</script>
 </body>
 </html>
