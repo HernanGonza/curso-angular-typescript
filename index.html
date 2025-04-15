@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Curso Angular + TypeScript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.2/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.2/dist/theme/solarized.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/monokai.min.css">
+  <style>
+    body {
+      background-color: #002b36;
+      color: #fdf6e3;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    h1, h2, h3 {
+      color: #b58900;
+    }
+    .reveal pre code {
+      font-size: 0.9em;
+    }
+    .reveal section img {
+      max-height: 300px;
+    }
+    .button {
+      background: #268bd2;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      
+      <section>
+        <h1>Curso Angular + TypeScript</h1>
+        <h3>Autodidacta e Interactivo</h3>
+        <p><a href="#/introduccion" class="button">Comenzar Curso</a></p>
+      </section>
+
+      <section id="introduccion">
+        <h2>Bienvenida</h2>
+        <p>En este curso aprenderás a usar TypeScript y Angular paso a paso, con teoría, ejemplos y desafíos prácticos.</p>
+        <ul>
+          <li>No necesitás experiencia previa con frameworks</li>
+          <li>Ideal para desarrolladores JavaScript que quieren dar el siguiente paso</li>
+          <li>100% práctico y pensada para GitHub Pages</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Módulo 1: Fundamentos de TypeScript</h2>
+      </section>
+      <section>
+        <h3>¿Qué es TypeScript?</h3>
+        <p>Es un superconjunto de JavaScript que añade tipos, interfaces, clases y más.</p>
+        <pre><code class="language-ts">let nombre: string = 'Juan';
+let edad: number = 25;</code></pre>
+      </section>
+      <section>
+        <h3>Tipos primitivos</h3>
+        <ul>
+          <li><code>string</code>, <code>number</code>, <code>boolean</code>, <code>any</code></li>
+        </ul>
+        <pre><code class="language-ts">let activo: boolean = true;
+let lista: number[] = [1, 2, 3];</code></pre>
+      </section>
+
+      <section>
+        <h3>Interfaces y Clases</h3>
+        <pre><code class="language-ts">interface Persona {
+  nombre: string;
+  edad: number;
+}
+
+class Empleado implements Persona {
+  constructor(public nombre: string, public edad: number) {}
+}</code></pre>
+      </section>
+
+      <section>
+        <h2>Módulo 2: Introducción a Angular</h2>
+      </section>
+      <section>
+        <h3>¿Qué es Angular?</h3>
+        <p>Framework de desarrollo frontend basado en componentes, desarrollado por Google.</p>
+        <pre><code>ng new mi-app</code></pre>
+        <pre><code>ng serve</code></pre>
+      </section>
+
+      <section>
+        <h3>Componentes</h3>
+        <pre><code class="language-ts">@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html'
+})
+export class AppComponent {
+  titulo = 'Mi app Angular';
+}</code></pre>
+      </section>
+
+      <section>
+        <h2>Extras: Pipes Personalizados</h2>
+        <pre><code class="language-ts">@Pipe({ name: 'mayusculas' })
+export class MayusculasPipe implements PipeTransform {
+  transform(valor: string): string {
+    return valor.toUpperCase();
+  }
+}</code></pre>
+      </section>
+
+      <section>
+        <h2>Extras: Guards de rutas</h2>
+        <pre><code class="language-ts">canActivate(route: ActivatedRouteSnapshot): boolean {
+  return this.authService.isLoggedIn();
+}</code></pre>
+      </section>
+
+      <section>
+        <h2>Extras: Despliegue en GitHub Pages</h2>
+        <pre><code>ng build --base-href "/mi-repo/"
+npx angular-cli-ghpages --dir=dist/mi-app</code></pre>
+      </section>
+
+      <section>
+        <h2>¡Gracias!</h2>
+        <p>Ahora podés comenzar a desarrollar con Angular + TypeScript 💻</p>
+        <p><a class="button" href="#/">Volver al inicio</a></p>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.2/dist/reveal.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true
+    });
+    hljs.highlightAll();
+  </script>
+</body>
+</html>
